@@ -23,6 +23,7 @@ alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold bl
 alias v=". venv/bin/activate.fish"
 alias d="deactivate"
 alias db="docker-compose up db"
+alias es="docker-compose up es"
 
 # Heroku
 alias hr="heroku run"
