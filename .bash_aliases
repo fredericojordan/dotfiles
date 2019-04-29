@@ -16,12 +16,14 @@ alias gm="git merge"
 alias gpl="git pull"
 alias gps="git push"
 alias gck="git checkout"
-alias gr="f() { git branch --merged | grep -v -e "dev" | xargs -n 1 git branch -d; }; f"
-alias gl="git log"
+alias gr= "git branch --merged | grep -v -E 'master|qa|development|\*' | xargs -n 1 git branch -d"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
 
 # Virtual Envs
 alias v="source venv/bin/activate"
 alias d="deactivate"
+alias db="docker-compose up db"
+alias es="docker-compose up es"
 
 # Heroku
 alias hr="heroku run"
@@ -40,4 +42,11 @@ alias sp="python manage.py shell_plus"
 alias su="python manage.py show_urls --format=table"
 alias m="python manage.py migrate"
 alias mm="python manage.py makemigrations"
-alias t="python manage.py test"
+alias t="python manage.py test --settings=singularityu.test_settings"
+
+# Postgres
+alias pgl="psql -U postgres -h localhost"
+
+# Yarn
+alias y="yarn"
+alias yd="yarn dev"
