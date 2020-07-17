@@ -33,31 +33,24 @@ alias hgps="hg push"
 alias hgck="hg checkout"
 alias hgl="hg glog"
 
-alias b="black (git diff --staged --name-only)"
+alias b="black ."
+alias bg="black (git diff --staged --name-only)"
 alias x="echo No XQuartz for you!"
 
 # Virtual Envs
 alias v=". venv/bin/activate.fish"
 alias d="deactivate"
+alias dc="docker-compose"
 alias db="docker-compose up db"
 alias es="docker-compose up es"
 alias web="docker-compose up web"
+alias wweb="while true; docker-compose up web; echo 'Charging flux capacitor in 3.. 2.. 1..'; sleep 3; end;"
 alias z="docker exec -it zett-web_web_1 bash"
+alias docker-erase="docker system prune -f; docker rm (docker ps -a | awk '{print \$1}' | grep -v CONT);  docker rmi (docker images -a | awk '{print \$3}' | grep -v IMA)"
 
 # Heroku
 alias hr="heroku run"
-alias hrd="heroku run -a su-directory-backend-dev bash"
-alias hrq="heroku run -a su-directory-backend-qa bash"
-alias hrp="heroku run -a su-directory-backend bash"
-alias hrz="heroku run -a zettglobal-backend-staging bash"
-alias hrds="heroku run -a su-directory-backend-dev python manage.py shell_plus"
-alias hrqs="heroku run -a su-directory-backend-qa python manage.py shell_plus"
-alias hrps="heroku run -a su-directory-backend python manage.py shell_plus"
-alias hrzs="heroku run -a zettglobal-backend-staging python manage.py shell_plus"
 alias hl="heroku logs"
-alias hld="heroku logs -a su-directory-backend-dev -t"
-alias hlq="heroku logs -a su-directory-backend-qa -t"
-alias hlp="heroku logs -a su-directory-backend -t"
 
 # Django
 alias r="python manage.py runserver_plus"
