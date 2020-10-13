@@ -1,4 +1,5 @@
 # System
+alias fucking="sudo"
 alias l="ls -la"
 alias c="clear"
 alias q="exit"
@@ -17,7 +18,7 @@ alias gm="git merge"
 alias gpl="git pull"
 alias gps="git push"
 alias gck="git checkout"
-alias gr="git branch --merged | grep -v -E 'master|qa|staging|dev|development|lab|\*' | xargs -n 1 git branch -d"
+alias gr="git branch --merged | grep -v -E 'main|master|qa|staging|dev|development|lab|\*' | xargs -n 1 git branch -d"
 alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
 
 # Mercurial
@@ -34,6 +35,7 @@ alias hgck="hg checkout"
 alias hgl="hg glog"
 
 alias b="black ."
+alias bb="bandit -r ."
 alias bg="black (git diff --staged --name-only)"
 alias x="echo No XQuartz for you!"
 
