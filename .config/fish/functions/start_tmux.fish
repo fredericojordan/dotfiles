@@ -1,6 +1,6 @@
 function __tmux_start -d "start tmux"
     # return if requirements are not found.
-    if not which tmux >/dev/null ^&1
+    if not which tmux >/dev/null 2>&1
         return 1
     end
 
