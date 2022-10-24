@@ -14,11 +14,11 @@ function __tmux_start -d "start tmux"
         tmux start-server
 
         # create session
-        if not tmux has-session ^/dev/null
+        if not tmux has-session 2>/dev/null
             set -l tmux_session 'fish'
             tmux \
                 new-session -d -s "$tmux_session" \; \
-                set-option -t "$tmux_session" destroy-unattached off >/dev/null ^&1
+                set-option -t "$tmux_session" destroy-unattached off >/dev/null 2>&1
         end
 
         # attach session
